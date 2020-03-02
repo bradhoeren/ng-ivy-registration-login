@@ -1,26 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AuthenticationService } from '../_services/authentication.service';
+import { AlertService, AuthenticationService } from '../_services/';
 
-@Component({templateUrl: 'login.component.html'})
+@Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
     returnUrl: string;
-    error: string;
 
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authenticationService: AuthenticationService
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService
     ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
+        if (this.authenticationService.currentUserValue) {
             this.router.navigate(['/']);
         }
     }
@@ -41,6 +41,9 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
+        // reset alerts on submit
+        this.alertService.clear();
+
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
@@ -54,7 +57,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.error = error;
+                    this.alertService.error(error);
                     this.loading = false;
                 });
     }
