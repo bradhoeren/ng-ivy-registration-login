@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../_services/authentication.service';
@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
-            password: ['', Validators.required]
+            password: ['', Validators.required],
+            instance: ['burnside', Validators.required]
         });
 
         // get return url from route parameters or default to '/'
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
         }
 
         this.loading = true;
-        this.authenticationService.login(this.f.username.value, this.f.password.value)
+        this.authenticationService.login(this.f.username.value, this.f.password.value, this.f.instance.value)
             .pipe(first())
             .subscribe(
                 data => {

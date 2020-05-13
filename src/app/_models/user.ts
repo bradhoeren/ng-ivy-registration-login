@@ -4,5 +4,6 @@ export class User {
     password: string;
     firstName: string;
     lastName: string;
+    securityGroup_id: number;
     token: string;
 }

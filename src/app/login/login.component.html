@@ -16,6 +16,13 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="instance">Instance Name</label>
+        <input type="text" formControlName="instance" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.instance.errors }" />
+        <div *ngIf="submitted && f.instance.errors" class="invalid-feedback">
+            <div *ngIf="f.instance.errors.required">Instance Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Login
