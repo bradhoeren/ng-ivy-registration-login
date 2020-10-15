@@ -14,6 +14,12 @@ import { AlertComponent } from './_components/alert/alert.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CinfoComponent } from './cinfo/cinfo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -21,13 +27,19 @@ import { RegisterComponent } from './register/register.component';
     AlertComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CinfoComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

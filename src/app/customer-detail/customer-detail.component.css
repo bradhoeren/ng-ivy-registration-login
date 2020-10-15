@@ -1,0 +1,24 @@
+.full-width-table {
+  width: 100%;
+  height: 100%;
+}
+
+.mat-column-institutionName {
+  width: 25%;
+}
+
+.mat-column-instanceName {
+  width: 25%;
+}
+
+.mat-column-wsInstance {
+  width: 10%;
+}
+
+.mat-column-database {
+  width: 10%;
+}
+
+.mat-column-databaseLocation {
+  width: 30%;
+}

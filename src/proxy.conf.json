@@ -2,6 +2,6 @@
     "/r25ws/*": {
         "target": "https://webservices.collegenet.com",
         "secure": true,
-        "changeOrigin": false
+        "changeOrigin": true
     }
 }
