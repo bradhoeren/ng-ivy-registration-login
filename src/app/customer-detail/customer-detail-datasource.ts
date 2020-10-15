@@ -18,10 +18,10 @@ export interface CustomerDetailItem {
 const EXAMPLE_DATA: CustomerDetailItem[] = [
   // data format to initialize example data
   // {institutionName : "", instanceName : "", wsInstance : "", database : {prodDatabase : true, databaseServer : "", databaseName : "", databaseType : "" }}
-  {institutionName : "CollegeNET, inc. Sales", instanceName : "implement", wsInstance : "impl", database : {prodDatabase : true, databaseServer : "prod3", databaseName : "implement", databaseType : "series25" }},
-  {institutionName : "Partners", instanceName : "partners", wsInstance : "part", database : {prodDatabase : true, databaseServer : "prod3", databaseName : "partners", databaseType : "series25" }},
-  {institutionName : "UniData QA Instance", instanceName : "qaunidata", wsInstance : "", database : {prodDatabase : false, databaseServer : "prod5", databaseName : "qaunidata_lynx", databaseType : "lynx" }},
-  {institutionName : "Workday QA Instance", instanceName : "qawd", wsInstance : "", database : {prodDatabase : false, databaseServer : "prod3", databaseName : "qawd_lynx", databaseType : "lynx" }}
+  {institutionName : "CNET Sales", instanceName : "implement", wsInstance : "impl", database : {prodDatabase : true, databaseServer : "3", databaseName : "implement", databaseType : "series25" }},
+  {institutionName : "Partners", instanceName : "partners", wsInstance : "part", database : {prodDatabase : true, databaseServer : "3", databaseName : "partners", databaseType : "series25" }},
+  {institutionName : "UniData QA Instance", instanceName : "qaunidata", wsInstance : "", database : {prodDatabase : false, databaseServer : "5", databaseName : "qaunidata_lynx", databaseType : "lynx" }},
+  {institutionName : "Workday QA Instance", instanceName : "qawd", wsInstance : "", database : {prodDatabase : false, databaseServer : "3", databaseName : "qawd_lynx", databaseType : "lynx" }}
 ];
 
 /**
